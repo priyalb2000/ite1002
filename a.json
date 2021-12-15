@@ -1,0 +1,98 @@
+[
+  {
+    "team":"Kolkata Knight Riders",
+    "pld":"2",
+    "won":"2",
+    "lost":"0",
+    "tied":"0",
+    "nr":"0",
+    "netrr":"+0.834",
+    "for":"401/39.4",
+    "against":"371/40",
+    "pts":"4"
+  },
+  {
+    "team":"Chennai Super Kings",
+    "pld":"2",
+    "won":"2",
+    "lost":"0",
+    "tied":"0",
+    "nr":"0",
+    "netrr":"+0.495",
+    "for":"221/37.2",
+    "against":"217/40",
+    "pts":"4"
+  },
+  {
+    "team":"Delhi Capitals",
+    "pld":"2",
+    "won":"1",
+    "lost":"1",
+    "tied":"0",
+    "nr":"0",
+    "netrr":"+0.782",
+    "for":"360/40",
+    "against":"326/39.4",
+    "pts":"2"
+  },
+  {
+    "team":"Sunrisers Hyderabad",
+    "pld":"2",
+    "won":"1",
+    "lost":"1",
+    "tied":"0",
+    "nr":"0",
+    "netrr":"+0.190",
+    "for":"382/39",
+    "against":"381/39.4",
+    "pts":"2"
+  },
+  {
+    "team":"Kings XI Punjab",
+    "pld":"2",
+    "won":"1",
+    "lost":"1",
+    "tied":"0",
+    "nr":"0",
+    "netrr":"-0.350",
+    "for":"374/40",
+    "against":"388/40",
+    "pts":"2"
+  },
+  {
+    "team":"Mumbai Indians",
+    "pld":"2",
+    "won":"1",
+    "lost":"1",
+    "tied":"0",
+    "nr":"0",
+    "netrr":"-0.775",
+    "for":"363/40",
+    "against":"394/40",
+    "pts":"2"
+  },
+  {
+    "team":"Royal Challengers Bangalore",
+    "pld":"2",
+    "won":"0",
+    "lost":"2",
+    "tied":"0",
+    "nr":"0",
+    "netrr":"-0.575",
+    "for":"251/40",
+    "against":"287/37.4",
+    "pts":"0"
+  },
+  {
+    "team":"Rajasthan Royals",
+    "pld":"2",
+    "won":"0",
+    "lost":"2",
+    "tied":"0",
+    "nr":"0",
+    "netrr":"-0.672",
+    "for":"368/40",
+    "against":"385/29",
+    "pts":"0"
+  }
+]

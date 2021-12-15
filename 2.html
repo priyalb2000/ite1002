@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="angular-1.7.8/angular.min.js"></script>
+    <script>
+        var app = angular.module('myapp', [])
+        app.controller('mCtrl', function ($scope) {
+            $scope.flag = false;
+            console.log($scope.flag);
+            $scope.verify = function () {
+                var reg1 = /^([A-Za-z]+\s*)+$/
+                var reg2 = /^([A-Za-z0-9,-]+\s*)+$/
+                var reg3 = /^[0-9]+$/
+                if (!reg1.test($scope.name)) {
+                    alert("Invalid Name");
+                } else if (!reg2.test($scope.address1)) {
+                    alert("Invalid Address");
+                } else if (!reg1.test($scope.city)) {
+                    alert("Invalid City");
+
+                } else if (!reg1.test($scope.state)) {
+                    alert("Invalid State");
+
+                } else if (!reg3.test($scope.zip)) {
+                    alert("Invalid Zip");
+                } else {
+                    $scope.flag = true;
+                    console.log($scope.flag);
+                }
+            }
+        })
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body ng-app="myapp">
+    <form ng-controller="mCtrl">
+        <table>
+            <tr>
+                <td>*Name:</td>
+                <td><input type="text" ng-model="name" required></td>
+            </tr>
+            <tr>
+                <td>*Address:</td>
+                <td><input type="text" ng-model="address1" required></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" ng-model="address2"></td>
+            </tr>
+            <tr>
+                <td>*City:</td>
+                <td><input type="text" ng-model="city" required></td>
+            </tr>
+            <tr>
+                <td>*State:</td>
+                <td><input type="text" ng-model="state"></td>
+            </tr>
+            <tr>
+                <td>*Zip:</td>
+                <td><input type="number" ng-model="zip"></td>
+            </tr>
+        </table>
+        <button type="button" ng-click="verify()">Submit!</button>
+    </form>
+    <p ng-hide="!flag">The package is in transit</p>
+</body>
+
+</html>

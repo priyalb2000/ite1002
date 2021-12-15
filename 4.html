@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="angular-1.7.8/angular.min.js"></script>
+    <script>
+        var app = angular.module('myapp', [])
+
+        app.controller('mCtrl', function ($scope) {
+            $scope.flag = false;
+            $scope.orderNo = 0;
+            $scope.details = [{
+                    "id": 1,
+                    "order": 1234,
+                    "details": '15 inch Samsung Laptop'
+                },
+                {
+                    "id": 2,
+                    "order": 5412,
+                    "details": 'Hard Disk'
+                },
+                {
+                    "id": 3,
+                    "order": 9874,
+                    "details": 'D-Link Router'
+                }
+            ];
+
+
+            $scope.show = function (items) {
+                $scope.flag = true;
+                $scope.orderNo = items.order;
+
+            }
+
+        })
+    </script>
+
+    <style>
+        body{
+            text-align: center;
+        }
+        button {
+            background: none;
+            text-decoration: underline;
+            border: none;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            padding: 15px;
+            font-size: 17px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(207, 206, 206);
+        }
+        .tab{
+            display: inline-block;
+            margin: 200px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body ng-app="myapp" ng-controller="mCtrl">
+    <div class="tab">
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Order No.</th>
+            <th colspan="2">Details</th>
+
+        </tr>
+        <tr ng-repeat="items in details">
+            <td>{{items.id}}</td>
+            <td>{{items.order}}</td>
+            <td>{{items.details}}</td>
+            <td><button type="button" ng-click="show(items)">Show Details</button></td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="4" ng-hide="!flag">ORDER #{{orderNo}}<br />HERE ARE THE DETAILS FOR ORDER
+                #{{orderNo}}</td>
+        </tr>
+
+    </table>
+</div>
+</body>
+
+</html>

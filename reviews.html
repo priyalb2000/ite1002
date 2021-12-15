@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+    <script src="angular-1.7.8/angular.min.js"></script>
+    <script>
+        var app = angular.module('myapp', [])
+
+        app.controller('mCtrl', function ($scope) {
+            $scope.details = [{
+                "match": 'CSK v/s MI',
+                "reviews": [{ "name": "Bhavika : ", "review": "The match gave quite unexpected results. It was overall an enthralling match." },
+                { "name": "Riya : ", "review": "Boring!!" }, { "name": "Sarthak : ", "review": "Decent match!" }]
+
+            },
+            {
+                "match": 'SRH v/s KXIP',
+                "reviews": [{ "name": "Sarthak : ", "review": "Quite interesting!!" }, { "name": "Priyal : ", "review": "Unfair Match" }]
+            },
+
+            {
+                "match": 'RCB v/s DC',
+                "reviews": [{ "name": "Bhavika : ", "review": "Boringg!!" }]
+            },
+            {
+                "match": 'SRH v/s CSK',
+                "reviews": [{ "name": "Ram : ", "review": "Worth the while" },{ "name": "Aviral : ", "review": "Usual" }]
+            }
+            ];
+
+
+        })
+    </script>
+
+    <style>
+        body {
+            text-align: center;
+            background-image: url("./b1.jpg");
+        }
+        .tab{
+            border: solid 2px white;
+            border-radius: 100px;
+            margin: 20px;
+            width: 750px;
+            background-color: aliceblue;
+            transition: transform .2s;
+            transition: box-shadow .3s;
+        }
+        .a{
+
+        }
+        li{
+            list-style-type: none;
+        }
+        h1{
+            font-size: 70px;
+            color: orangered;
+        }
+        h2{
+            color: orange;
+        }
+        .tab:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+        }
+        input[type=button]{
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 16px 32px;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+    </style>
+</head>
+
+<body ng-app="myapp" ng-controller="mCtrl">
+  <div id="navbar">
+    <a class="active" href="ipl.html">HOME</a>
+    <a href="teams.html">TEAMS</a>
+    <a href="schedule.html">SCHEDULE</a>
+    <a href="videos.html">VIDEOS</a>
+    <a href="reviews.html">REVIEWS</a>
+    <input align="right" type="button" value="BACK" onclick="history.back()">
+  </div>
+    <h1>REVIEWS</h1>
+    <center>
+    <div class="tab" ng-repeat="items in details">
+        <div>
+            <h2>{{items.match}}</h2>
+            <ul>
+                <li ng-repeat="rev in items.reviews">
+                    <p class="a"><b>{{rev.name}}</b> {{rev.review}}</p>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    </center>
+
+</body>
+
+</html>

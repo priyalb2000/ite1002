@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IPLT20</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="angular.min.js"></script>
+<script>
+  var app=angular.module("myApp",[]);
+  app.controller("myCtrl",function($scope,$http){
+    $http.get("a.json").success(function(data){
+      $scope.point=data;
+    });
+  });
+</script>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+ 	$(document).ready(function(){
+		$("tr:odd").css("background-color","#151B54");
+			$("tr:odd").css("color","white");
+ 	 	}
+	);
+</script>
+  </head>
+  <body>
+    <div class="header">
+  <h2><b><i>IPL-2019-More Grandeur, More Excitement</i></b></h2>
+  </div>
+
+<div id="navbar">
+  <a class="active" href="ipl.html">HOME</a>
+  <a href="teams.html">TEAMS</a>
+  <a href="schedule.html">SCHEDULE</a>
+  <a href="videos.html">VIDEOS</a>
+  <a href="reviews.html">REVIEWS</a>
+  <input type="text" placeholder="SEARCH">
+</div><br>
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="logo.png" style="width:100%">
+  <img class="mySlides" src="1.jpg" style="width:100%">
+  <img class="mySlides" src="2.jpg" style="width:100%">
+  <img class="mySlides" src="3.jpg" style="width:100%">
+  <img class="mySlides" src="4.jpg" style="width:100%">
+  <img class="mySlides" src="5.jpg" style="width:100%">
+  <img class="mySlides" src="6.jpg" style="width:100%">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+  <div ng-app="myApp" ng-controller="myCtrl" class="w3-card-2 w3-margin" style="maxwidth:400px;">
+  Pointer Table<br>
+  <table style="width:70%">
+    <tr>
+      <th>Team</th>
+      <th>Pld</th>
+      <th>Won</th>
+      <th>Lost</th>
+      <th>Tied</th>
+      <th>N/R</th>
+      <th>Net RR</th>
+      <th>For</th>
+      <th>Against</th>
+      <th>Pts</th>
+    </tr>
+    <tr>
+      <td>Kolkata Knight Riders</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>+0.834</td>
+      <td>401/39.4</td>
+      <td>371/40</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Chennai Super Kings</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>+0.495</td>
+      <td>221/37.2</td>
+      <td>217/40</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Delhi Capitals</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>+0.782</td>
+      <td>360/40</td>
+      <td>326/39.4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Sunrisers Hyderabad</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>+0.190</td>
+      <td>382/39</td>
+      <td>381/39.4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Kings XI Punjab</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-0.350</td>
+      <td>374/40</td>
+      <td>388/40</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Mumbai Indians</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-0.775</td>
+      <td>363/40</td>
+      <td>394/40</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Royal Challengers Bangalore</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-0.575</td>
+      <td>251/40</td>
+      <td>287/37.4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Rajasthan Royals</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-0.672</td>
+      <td>368/40</td>
+      <td>385/29</td>
+      <td>0</td>
+    </tr>
+      <tr ng-repeat="x in point">
+       <td>{{x.team}}</td>
+       <td>{{x.pld}}</td>
+       <td>{{x.won}}</td>
+       <td>{{x.lost}}</td>
+       <td>{{x.tied}}</td>
+       <td>{{x.nr}}</td>
+       <td>{{x.netrr}}</td>
+       <td>{{x.for}}</td>
+       <td>{{x.against}}</td>
+       <td>{{x.pts}}</td>
+    </tr>
+  </table>
+</div>
+
+<img src="7.png" style="width:100%">
+
+  <footer>
+    <div style="background:#151B54;padding:5px">
+  <p style="color:#fff">  Copyright Reserved</p>
+  <p style="color:#fff">
+<img src="twitter.png" style="width:20px;height:20px"><a href="https://twitter.com/IPL">twitter</a>
+<img src="fb.png" style=" width: 20px;height:20px"><a href="https://www.facebook.com/ipl">facebook</a>
+<img src="insta.png" style=" width: 20px;height:20px"><a href="https://www.instagram.com/iplt20/">instagram</a></p>
+</div>
+
+    </footer>
+    </div>
+  </body>
+</html>
